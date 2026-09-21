@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+.env
+data/.pending_notifications.json
+data/.moodle_session.json
+data/.telegram_offset.json
+data/*.tmp
