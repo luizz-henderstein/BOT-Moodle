@@ -1,0 +1,17 @@
+[Unit]
+Description=Monitor de tareas EVA a Telegram
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/.local/share/eva-telegram
+EnvironmentFile=%h/.config/eva-telegram/eva-telegram.env
+ExecStart=%h/.local/share/eva-telegram/.venv/bin/python -u src/check_eva.py run
+Restart=on-failure
+RestartSec=15
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=default.target
